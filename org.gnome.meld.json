@@ -26,6 +26,7 @@
     "rename-appdata-file": "meld.appdata.xml",
     "rename-desktop-file": "meld.desktop",
     "rename-icon": "meld",
+    "copy-icon": true,
     "finish-args": [
         /* X11 + XShm */
         "--share=ipc", "--socket=x11",
