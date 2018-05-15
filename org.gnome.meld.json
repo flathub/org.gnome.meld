@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.26",
+    "runtime-version": "3.28",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
@@ -60,8 +60,8 @@
             ],
             "sources": [{
                 "type": "archive",
-                "url": "https://download.gnome.org/sources/meld/3.18/meld-3.18.0.tar.xz",
-                "sha256": "848158b1e5c7473b9da3ddc16e057aad8951ec82979beb5914b8b4acdf97223e"
+                "url": "https://download.gnome.org/sources/meld/3.18/meld-3.18.1.tar.xz",
+                "sha256": "3af68caeab5f38e82de66567346722db47ed6a6fa6d9d595de4ae7e15c88e879"
             }]
         }
     ]
