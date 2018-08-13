@@ -60,8 +60,8 @@
             ],
             "sources": [{
                 "type": "archive",
-                "url": "https://download.gnome.org/sources/meld/3.18/meld-3.18.1.tar.xz",
-                "sha256": "3af68caeab5f38e82de66567346722db47ed6a6fa6d9d595de4ae7e15c88e879"
+                "url": "https://download.gnome.org/sources/meld/3.18/meld-3.18.2.tar.xz",
+                "sha256": "1934abf4397e6a31b3c3d3d372ddb2aa6e6be499a71d96b114f14707afe93781"
             }]
         }
     ]
