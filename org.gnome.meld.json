@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.28",
+    "runtime-version": "3.30",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
@@ -16,13 +16,6 @@
         "*.la",
         "*.a"
     ],
-    "build-options": {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
     "rename-appdata-file": "meld.appdata.xml",
     "rename-desktop-file": "meld.desktop",
     "rename-icon": "meld",
