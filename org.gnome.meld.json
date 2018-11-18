@@ -41,8 +41,8 @@
             },
             "sources": [{
                 "type": "archive",
-                "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.6.tar.xz",
-                "sha256": "7aa6bdfebcdc73a763dddeaa42f190c40835e6f8495bb9eb8f78587e2577c188"
+                "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.9.tar.xz",
+                "sha256": "699d76a453e6a3d3331906346e3dbfa25f2cbc9ec090e46635e9c6bb595e07c2"
             }]
         },
         {
@@ -53,8 +53,8 @@
             ],
             "sources": [{
                 "type": "archive",
-                "url": "https://download.gnome.org/sources/meld/3.18/meld-3.18.2.tar.xz",
-                "sha256": "1934abf4397e6a31b3c3d3d372ddb2aa6e6be499a71d96b114f14707afe93781"
+                "url": "https://download.gnome.org/sources/meld/3.18/meld-3.18.3.tar.xz",
+                "sha256": "960ea71e82cedcb8ec89ae71704fdf21c70fa95bc41dc8511f2120074cc7c16e"
             }]
         }
     ]
