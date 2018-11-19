@@ -49,7 +49,9 @@
             "name": "meld",
             "buildsystem": "simple",
             "build-commands": [
-                "python3 setup.py install --prefix=${FLATPAK_DEST}"
+                "python3 setup.py install --prefix=${FLATPAK_DEST}",
+                "mv /app/share/mime/packages/meld.xml /app/share/mime/packages/org.gnome.meld.xml",
+                "sed -i -e 's|<icon name=\"meld\"/>|<icon name=\"org.gnome.meld\"/>|' /app/share/mime/packages/org.gnome.meld.xml"
             ],
             "sources": [{
                 "type": "archive",
