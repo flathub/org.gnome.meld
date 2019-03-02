@@ -16,10 +16,6 @@
         "*.la",
         "*.a"
     ],
-    "rename-appdata-file": "meld.appdata.xml",
-    "rename-desktop-file": "meld.desktop",
-    "rename-icon": "meld",
-    "copy-icon": true,
     "finish-args": [
         /* X11 + XShm */
         "--share=ipc", "--socket=x11",
@@ -49,14 +45,12 @@
             "name": "meld",
             "buildsystem": "simple",
             "build-commands": [
-                "python3 setup.py install --prefix=${FLATPAK_DEST}",
-                "mv /app/share/mime/packages/meld.xml /app/share/mime/packages/org.gnome.meld.xml",
-                "sed -i -e 's|<icon name=\"meld\"/>|<icon name=\"org.gnome.meld\"/>|' /app/share/mime/packages/org.gnome.meld.xml"
+                "python3 setup.py install --prefix=${FLATPAK_DEST}"
             ],
             "sources": [{
                 "type": "archive",
-                "url": "https://download.gnome.org/sources/meld/3.18/meld-3.18.3.tar.xz",
-                "sha256": "960ea71e82cedcb8ec89ae71704fdf21c70fa95bc41dc8511f2120074cc7c16e"
+                "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.1.tar.xz",
+                "sha256": "a54843bc4d6cb1d31d0a58aa725091622194d50c32ef67026b35c86dda3cb249"
             }]
         }
     ]
