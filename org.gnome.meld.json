@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.32",
+    "runtime-version": "3.34",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
@@ -23,18 +23,14 @@
         "--socket=wayland",
         /* Filesystem */
         "--filesystem=host",
-        /* dconf */
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--metadata=X-DConf=migrate-path=/org/gnome/meld/"
     ],
     "modules": [{
             "name": "gtksourceview",
-            "build-options": {
-                "config-opts": [
-                    "--enable-vala=no",
-                    "--enable-gtk-doc=no"
-                ]
-            },
+            "config-opts": [
+                "--enable-vala=no",
+                "--enable-gtk-doc=no"
+            ],
             "sources": [{
                 "type": "archive",
                 "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.9.tar.xz",
@@ -51,7 +47,10 @@
                 "type": "archive",
                 "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.1.tar.xz",
                 "sha256": "a54843bc4d6cb1d31d0a58aa725091622194d50c32ef67026b35c86dda3cb249"
-            }]
+            }],
+            "modules": [
+                "shared-modules/intltool/intltool-0.51.json"
+            ]
         }
     ]
 }
