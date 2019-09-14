@@ -25,17 +25,20 @@
         "--filesystem=host",
         "--metadata=X-DConf=migrate-path=/org/gnome/meld/"
     ],
-    "modules": [{
+    "modules": [
+         {
             "name": "gtksourceview",
             "config-opts": [
                 "--enable-vala=no",
                 "--enable-gtk-doc=no"
             ],
-            "sources": [{
-                "type": "archive",
-                "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.9.tar.xz",
-                "sha256": "699d76a453e6a3d3331906346e3dbfa25f2cbc9ec090e46635e9c6bb595e07c2"
-            }]
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.9.tar.xz",
+                    "sha256": "699d76a453e6a3d3331906346e3dbfa25f2cbc9ec090e46635e9c6bb595e07c2"
+                }
+            ]
         },
         {
             "name": "meld",
@@ -43,13 +46,41 @@
             "build-commands": [
                 "python3 setup.py install --prefix=${FLATPAK_DEST}"
             ],
-            "sources": [{
-                "type": "archive",
-                "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.1.tar.xz",
-                "sha256": "a54843bc4d6cb1d31d0a58aa725091622194d50c32ef67026b35c86dda3cb249"
-            }],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.1.tar.xz",
+                    "sha256": "a54843bc4d6cb1d31d0a58aa725091622194d50c32ef67026b35c86dda3cb249"
+                }
+            ],
             "modules": [
                 "shared-modules/intltool/intltool-0.51.json"
+            ]
+        },
+        {
+            "name": "git",
+            "buildsystem": "autotools",
+            "build-options": {
+                "env": [
+                    "NO_PERL=1",
+                    "NO_PYTHON=1",
+                    "NO_CURL=1",
+                    "NO_TCLTK=1"
+                ]
+            },
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/git/git.git",
+                    "tag": "v2.23.0",
+                    "commit": "5fa0f5238b0cd46cfe7f6fa76c3f526ea98148d9"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "autoconf"
+                    ]
+                }
             ]
         }
     ]
