@@ -64,7 +64,6 @@
                 "env": [
                     "NO_PERL=1",
                     "NO_PYTHON=1",
-                    "NO_CURL=1",
                     "NO_TCLTK=1"
                 ]
             },
