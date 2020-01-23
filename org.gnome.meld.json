@@ -19,6 +19,7 @@
     "finish-args": [
         /* X11 + XShm */
         "--share=ipc", "--socket=x11",
+        "--device=dri",
         /* Wayland */
         "--socket=wayland",
         /* Filesystem */
