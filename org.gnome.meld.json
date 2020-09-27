@@ -43,10 +43,7 @@
         },
         {
             "name": "meld",
-            "buildsystem": "simple",
-            "build-commands": [
-                "python3 setup.py install --prefix=${FLATPAK_DEST}"
-            ],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
