@@ -4,6 +4,9 @@
     "runtime-version": "3.38",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
+    "rename-icon": "org.gnome.Meld",
+	"rename-desktop-file": "org.gnome.Meld.desktop",
+	"rename-appdata-file": "org.gnome.Meld.appdata.xml",
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
