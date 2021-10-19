@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "40",
+    "runtime-version": "41",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
@@ -18,7 +18,8 @@
     ],
     "finish-args": [
         /* X11 + XShm */
-        "--share=ipc", "--socket=x11",
+        "--share=ipc",
+        "--socket=x11",
         "--device=dri",
         /* Wayland */
         "--socket=wayland",
@@ -50,8 +51,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.3.tar.xz",
-                    "sha256": "f0e32b29bdb3aeb10060265042fd3541b1ecd38410c87a40b1456ef8d416051a"
+                    "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.4.tar.xz",
+                    "sha256": "f48e10eec606f687a87061e78668f6bb40e63e032175c4c7033636b65a157d13"
                 }
             ],
             "modules": [
