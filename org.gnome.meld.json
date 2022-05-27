@@ -17,18 +17,15 @@
         "*.a"
     ],
     "finish-args": [
-        /* X11 + XShm */
         "--share=ipc",
         "--socket=x11",
         "--device=dri",
-        /* Wayland */
         "--socket=wayland",
-        /* Filesystem */
         "--filesystem=host",
         "--metadata=X-DConf=migrate-path=/org/gnome/meld/"
     ],
     "modules": [
-         {
+        {
             "name": "gtksourceview",
             "config-opts": [
                 "--enable-vala=no",
