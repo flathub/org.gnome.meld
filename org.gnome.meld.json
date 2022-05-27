@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "41",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
@@ -17,18 +17,15 @@
         "*.a"
     ],
     "finish-args": [
-        /* X11 + XShm */
         "--share=ipc",
         "--socket=x11",
         "--device=dri",
-        /* Wayland */
         "--socket=wayland",
-        /* Filesystem */
         "--filesystem=host",
         "--metadata=X-DConf=migrate-path=/org/gnome/meld/"
     ],
     "modules": [
-         {
+        {
             "name": "gtksourceview",
             "config-opts": [
                 "--enable-vala=no",
