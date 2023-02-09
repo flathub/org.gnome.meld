@@ -1,7 +1,7 @@
 {
-    "app-id": "org.gnome.meld",
+    "app-id": "org.gnome.Meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
@@ -14,46 +14,40 @@
         "/share/gtk-doc",
         "/share/vala",
         "*.la",
-        "*.a"
+        "*.a",
+        "*.pyc",
+        "*.pyo"
     ],
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
-        "--device=dri",
         "--socket=wayland",
-        "--filesystem=host",
         "--metadata=X-DConf=migrate-path=/org/gnome/meld/"
     ],
     "modules": [
         {
             "name": "gtksourceview",
+            "buildsystem": "meson",
             "config-opts": [
-                "--enable-vala=no",
-                "--enable-gtk-doc=no"
+                "-Dgtk_doc=false"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.11.tar.xz",
-                    "sha256": "691b074a37b2a307f7f48edc5b8c7afa7301709be56378ccf9cc9735909077fd"
+                    "url": "https://download.gnome.org/sources/gtksourceview/4.4/gtksourceview-4.4.0.tar.xz",
+                    "sha256": "9ddb914aef70a29a66acd93b4f762d5681202e44094d2d6370e51c9e389e689a"
                 }
             ]
         },
         {
             "name": "meld",
-            "buildsystem": "simple",
-            "build-commands": [
-                "python3 setup.py install --prefix=${FLATPAK_DEST}"
-            ],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.4.tar.xz",
-                    "sha256": "f48e10eec606f687a87061e78668f6bb40e63e032175c4c7033636b65a157d13"
+                    "url": "https://download.gnome.org/sources/meld/3.22/meld-3.22.0.tar.xz",
+                    "sha256": "3fc107c98ef6e75358ffd2b0d14c85ddb48fe14a11e939a94322faaa8e90c40d"
                 }
-            ],
-            "modules": [
-                "shared-modules/intltool/intltool-0.51.json"
             ]
         },
         {
