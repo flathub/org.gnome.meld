@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
@@ -18,7 +18,7 @@
     ],
     "finish-args": [
         "--share=ipc",
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland",
         "--filesystem=host",
@@ -41,15 +41,16 @@
         },
         {
             "name": "meld",
-            "buildsystem": "simple",
-            "build-commands": [
-                "python3 setup.py install --prefix=${FLATPAK_DEST}"
-            ],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/meld/3.20/meld-3.20.4.tar.xz",
-                    "sha256": "f48e10eec606f687a87061e78668f6bb40e63e032175c4c7033636b65a157d13"
+                    "url": "https://download.gnome.org/sources/meld/3.22/meld-3.22.0.tar.xz",
+                    "sha256": "3fc107c98ef6e75358ffd2b0d14c85ddb48fe14a11e939a94322faaa8e90c40d"
+                },
+                {
+                    "type": "patch",
+                    "path": "meld-appid.patch"
                 }
             ],
             "modules": [
