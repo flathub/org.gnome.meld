@@ -46,7 +46,14 @@
                 {
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/meld/3.22/meld-3.22.0.tar.xz",
-                    "sha256": "3fc107c98ef6e75358ffd2b0d14c85ddb48fe14a11e939a94322faaa8e90c40d"
+                    "sha256": "3fc107c98ef6e75358ffd2b0d14c85ddb48fe14a11e939a94322faaa8e90c40d",
+                    "x-checker-data": {
+                        "is-main-source": true,
+                        "type": "json",
+                        "url": "https://gitlab.gnome.org/api/v4/projects/GNOME%2Fmeld/releases",
+                        "version-query": ".[0].tag_name",
+                        "url-query": "\"https://download.gnome.org/sources/meld/\" + ($version | sub(\"\\\\.\\\\d$\";\"\")) + \"/meld-\" + $version + \".tar.xz\""
+                    }
                 },
                 {
                     "type": "patch",
