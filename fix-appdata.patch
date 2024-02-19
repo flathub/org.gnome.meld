@@ -1,0 +1,23 @@
+diff --git a/data/org.gnome.meld.appdata.xml.in.in b/data/org.gnome.meld.appdata.xml.in.in
+index 7f72f52c..144f85dd 100644
+--- a/data/org.gnome.meld.appdata.xml.in.in
++++ b/data/org.gnome.meld.appdata.xml.in.in
+@@ -2,10 +2,6 @@
+ <!-- Copyright 2013-2014 Kai Willadsen <kai.willadsen@gmail.com> -->
+ <component type="desktop">
+   <id>@appid@.desktop</id>
+-  <provides>
+-    <id>org.gnome.meld.desktop</id>
+-  </provides>
+-  <translation type="gettext">meld</translation>
+   <metadata_license>CC0-1.0</metadata_license>
+   <project_license>GPL-2.0+</project_license>
+   <name>Meld</name>
+@@ -50,6 +46,7 @@
+   <project_group>GNOME</project_group>
+   <developer_name>The GNOME Project</developer_name>
+   <translation type="gettext">meld</translation>
++  <launchable type="desktop-id">org.gnome.meld.desktop</launchable>
+   <content_rating type="oars-1.1" />
+   <releases>
+     <release date="2024-02-18" version="3.22.1">
