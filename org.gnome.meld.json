@@ -57,7 +57,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "meld-appid.patch"
+                    "paths": [
+                        "meld-appid.patch",
+                        "fix-appdata.patch"
+                    ]
                 }
             ],
             "modules": [
