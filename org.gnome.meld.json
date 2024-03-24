@@ -45,8 +45,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/meld/3.22/meld-3.22.0.tar.xz",
-                    "sha256": "3fc107c98ef6e75358ffd2b0d14c85ddb48fe14a11e939a94322faaa8e90c40d",
+                    "url": "https://download.gnome.org/sources/meld/3.22/meld-3.22.2.tar.xz",
+                    "sha256": "46a0a713fbcd1b153b377a1e0757c8ce255c9822467658eacfbd89b1e92316ef",
                     "x-checker-data": {
                         "is-main-source": true,
                         "type": "json",
