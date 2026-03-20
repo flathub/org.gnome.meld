@@ -1,20 +1,14 @@
 {
     "app-id": "org.gnome.meld",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "49",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
-        "/share/pkgconfig",
-        "/share/aclocal",
-        "/man",
-        "/share/man",
-        "/share/gtk-doc",
-        "/share/vala",
-        "*.la",
-        "*.a"
+        "/share/gir-1.0",
+        "/share/man"
     ],
     "finish-args": [
         "--share=ipc",
