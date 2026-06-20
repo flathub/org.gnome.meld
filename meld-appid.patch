@@ -1,37 +1,76 @@
+From fa47b3c1ac75dfae4b9b8be0d2bcdf5d0a91ef7b Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Sat, 20 Jun 2026 13:51:21 +0300
+Subject: [PATCH] Fix app ID
+
+Signed-off-by: Sabri Ünal <yakushabb@gmail.com>
+---
+ data/meson.build                | 4 ++--
+ data/mime/org.gnome.Meld.xml.in | 2 +-
+ meld/conf.py.in                 | 2 +-
+ meson.build                     | 2 +-
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
 diff --git a/data/meson.build b/data/meson.build
-index de099d3b..13d7e650 100644
+index eb16e26..ea81ddf 100644
 --- a/data/meson.build
 +++ b/data/meson.build
-@@ -95,7 +95,7 @@ icon_sizes = ['scalable']
+@@ -106,15 +106,15 @@ icon_sizes = ['scalable']
  
  foreach i: icon_sizes
    install_data(
 -    'icons/hicolor' / i / 'apps' / application_id + '.svg',
-+    'icons/hicolor' / i / 'apps' / 'org.gnome.Meld.svg',
++   'icons/hicolor' / i / 'apps' / resource_base_id + '.svg',
      install_dir: icondir / 'hicolor' / i / 'apps',
      rename: '@0@.svg'.format(application_id),
    )
-@@ -103,7 +103,7 @@ endforeach
+ endforeach
  
  # Install the symbolic icon
  install_data(
 -  'icons/hicolor/symbolic/apps' / application_id_no_profile + '-symbolic.svg',
-+  'icons/hicolor/symbolic/apps' / 'org.gnome.Meld-symbolic.svg',
++  'icons/hicolor/symbolic/apps' / resource_base_id + '-symbolic.svg',
    install_dir: icondir / 'hicolor/symbolic/apps',
    rename: '@0@-symbolic.svg'.format(application_id),
  )
+diff --git a/data/mime/org.gnome.Meld.xml.in b/data/mime/org.gnome.Meld.xml.in
+index 0a745f8..e0d714c 100644
+--- a/data/mime/org.gnome.Meld.xml.in
++++ b/data/mime/org.gnome.Meld.xml.in
+@@ -3,6 +3,6 @@
+    <mime-type type="application/x-meld-comparison">
+      <comment>Meld comparison description</comment>
+      <glob pattern="*.meldcmp"/>
+-     <icon name="org.gnome.Meld"/>
++     <icon name="org.gnome.meld"/>
+    </mime-type>
+ </mime-info>
+diff --git a/meld/conf.py.in b/meld/conf.py.in
+index bcdc726..f6758da 100644
+--- a/meld/conf.py.in
++++ b/meld/conf.py.in
+@@ -7,7 +7,7 @@ __package__ = "meld"
+ __version__ = "3.24.0"
+ 
+ APPLICATION_NAME = 'Meld'
+-APPLICATION_ID = 'org.gnome.Meld'
++APPLICATION_ID = 'org.gnome.meld'
+ SETTINGS_SCHEMA_ID = 'org.gnome.meld'
+ RESOURCE_BASE = '/org/gnome/meld'
+ 
 diff --git a/meson.build b/meson.build
-index eea1336e..f8e38c1c 100644
+index faa47ba..cfd7fe6 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -26,8 +26,8 @@ profile = get_option('profile')
- name_suffix = (profile == 'Devel' ? ' (Development Snapshot)' : '')
+@@ -28,7 +28,7 @@ is_devel = get_option('profile') == 'Devel'
+ name_suffix = (is_devel ? ' (Development Snapshot)' : '')
  
- resource_base_id = 'org.gnome.meld'
+ resource_base_id = 'org.gnome.Meld'
 -application_id_no_profile = 'org.gnome.Meld'
--application_id = 'org.gnome.Meld@0@'.format(profile)
 +application_id_no_profile = 'org.gnome.meld'
-+application_id = 'org.gnome.meld@0@'.format(profile)
+ application_id = (is_devel ? application_id_no_profile + '.Devel' : application_id_no_profile)
  
- prefix = get_option('prefix')
- 
+ is_wheel = get_option('is_wheel')
+--
+libgit2 1.7.2
+

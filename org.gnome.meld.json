@@ -4,6 +4,7 @@
     "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "meld",
+    "rename-appdata-file": "org.gnome.meld.metainfo.xml",
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
@@ -60,10 +61,7 @@
                 },
                 {
                     "type": "patch",
-                    "paths": [
-                        "meld-appid.patch",
-                        "fix-appdata.patch"
-                    ]
+                    "path": "meld-appid.patch"
                 }
             ],
             "modules": [
